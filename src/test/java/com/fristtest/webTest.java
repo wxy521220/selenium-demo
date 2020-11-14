@@ -85,7 +85,7 @@ public class webTest {
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("username")).sendKeys("小胖子呦");
+        driver.findElement(By.id("username")).sendKeys("张三");
         driver.findElement(By.id("memberAdd_english_name")).sendKeys("wang");
         driver.findElement(By.id("memberAdd_acctid")).sendKeys("13426882203");
         driver.findElement(By.id("memberAdd_phone")).sendKeys("13426882203");
