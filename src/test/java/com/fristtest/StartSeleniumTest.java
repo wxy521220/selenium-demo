@@ -20,18 +20,18 @@ public class StartSeleniumTest {
     @BeforeAll
     static void getDriver(){
         driver=new FirefoxDriver();
-        //éšå¼ç­‰å¾…ï¼šé’ˆå¯¹å…¨å±€
+        //ÒşÊ½µÈ´ı£ºÕë¶ÔÈ«¾Ö
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver,5);
     }
     @Test
-    public  void startSelenium() throws InterruptedException {
-        //è®¾ç½®æµè§ˆå™¨è·¯å¾„
-        //åœ¨è®¾ç½®äº†pathç¯å¢ƒå˜é‡ä¹‹åå¯ä»¥ä¸å†™æµè§ˆå™¨è·¯å¾„
+    public  void startSeleniumTest() throws InterruptedException {
+        //ÉèÖÃä¯ÀÀÆ÷Â·¾¶
+        //ÔÚÉèÖÃÁËpath»·¾³±äÁ¿Ö®ºó¿ÉÒÔ²»Ğ´ä¯ÀÀÆ÷Â·¾¶
         //System.setProperty("webdriver.firefox.bin", "D:\\software\\firefox\\Mozilla Firefox\\firefox.exe");
 
         driver.get("https://ceshiren.com/");
-        //driver.findElement(By.xpath("//span[contains(text(),'ç™»å½•')]")).click();
+        //driver.findElement(By.xpath("//span[contains(text(),'µÇÂ¼')]")).click();
         driver.findElement(By.xpath("/html/body/section/div/div[1]/header/div/div/div[2]/span/button[2]/span")).click();
 
 
@@ -40,18 +40,18 @@ public class StartSeleniumTest {
         WebElement passwd=((FirefoxDriver) driver).findElementById("login-account-password");
         WebElement search_button=((FirefoxDriver) driver).findElement(By.xpath("/html/body/section/div/div[4]/div/div/div/div[3]/div[2]/button[1]/span"));
 
-        //æ¸…ç©ºè¾“å…¥æ¡†å†…å®¹
+        //Çå¿ÕÊäÈë¿òÄÚÈİ
         login.clear();
-        //è¾“å…¥æ¡†è¾“å…¥å†…å®¹
+        //ÊäÈë¿òÊäÈëÄÚÈİ
         login.sendKeys("2460765913@qq.com");
         passwd.sendKeys("521220wasd");
-        //å•å‡»
+        //µ¥»÷
         search_button.click();
         Thread.sleep(3000);
     }
 
     /*
-    æ˜¾ç¤ºç­‰å¾…
+    ÏÔÊ¾µÈ´ı
      */
 
     @Test

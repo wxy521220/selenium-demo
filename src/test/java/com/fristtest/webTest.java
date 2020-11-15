@@ -32,7 +32,7 @@ public class webTest {
         Thread.sleep(15000);
         Set<Cookie> cookies = driver.manage().getCookies();
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
-        //todo è·¯å¾„åŠ /
+        //todo Â·¾¶¼Ó/
         mapper.writeValue(new File("orderOutput.yaml"), cookies);
 
 
@@ -43,7 +43,7 @@ public class webTest {
         WebDriver driver=new FirefoxDriver();
 
         driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
-        //éšå¼ç­‰å¾…ï¼Œé»˜è®¤æ¯5ç§’è½®è¯¢ä¸€æ¬¡
+        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
@@ -69,7 +69,7 @@ public class webTest {
 
         driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
         driver.manage().window().maximize();
-        //éšå¼ç­‰å¾…ï¼Œé»˜è®¤æ¯5ç§’è½®è¯¢ä¸€æ¬¡
+        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
@@ -85,17 +85,48 @@ public class webTest {
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("username")).sendKeys("å¼ ä¸‰");
+        driver.findElement(By.id("username")).sendKeys("ÕÅÈı");
         driver.findElement(By.id("memberAdd_english_name")).sendKeys("wang");
         driver.findElement(By.id("memberAdd_acctid")).sendKeys("13426882203");
         driver.findElement(By.id("memberAdd_phone")).sendKeys("13426882203");
         Thread.sleep(1000);
         driver.findElement(By.id("memberAdd_telephone")).sendKeys("010-81722736");
         driver.findElement(By.id("memberAdd_mail")).sendKeys("2460765915@qq.com");
-        driver.findElement(By.id("memberEdit_address")).sendKeys("åŒ—äº¬å¸‚æµ·æ·€åŒº");
-        driver.findElement(By.id("memberAdd_title")).sendKeys("å¼€å‘");
+        driver.findElement(By.id("memberEdit_address")).sendKeys("±±¾©ÊĞº£µíÇø");
+        driver.findElement(By.id("memberAdd_title")).sendKeys("¿ª·¢");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".js_btn_save")).click();
+
+
+    }
+    @Test
+    void addDepTest() throws IOException, InterruptedException {
+
+        WebDriver driver=new FirefoxDriver();
+
+        driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
+        driver.manage().window().maximize();
+        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+
+        ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
+        TypeReference typeReference=new TypeReference<List<HashMap<String,Object>>>(){};
+        List<HashMap<String, Object>> cookies= (List<HashMap<String, Object>>) mapper.readValue(new File("orderOutput.yaml"),typeReference);
+        cookies.forEach(
+                cookieMap->{
+                    driver.manage().addCookie(new Cookie(cookieMap.get("name").toString(), cookieMap.get("value").toString()));
+                }
+        );
+
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
+        //driver.findElement(By.linkText("Ìí¼Ó"));
+        driver.findElement(By.cssSelector(".member_colLeft_top_addBtn")).click();
+        driver.findElement(By.linkText("Ìí¼Ó²¿ÃÅ"));
+        driver.findElement(By.name("name")).sendKeys("ÏúÊÛ²¿");
+
+
 
 
     }
