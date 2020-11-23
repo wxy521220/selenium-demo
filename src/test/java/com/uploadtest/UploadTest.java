@@ -17,4 +17,47 @@ public class UploadTest extends BaseTest {
         driver.findElement(By.cssSelector(".upload-pic")).sendKeys("G:\\timg.jpg");
         Thread.sleep(8000);
     }
+
+
+    @Test
+    public int findRepeatNumber() {
+        int[] nums= new int[]{2, 3, 1, 0, 2, 5, 3};
+        if (nums.length <= 0) {
+            return -1;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            while (i != nums[i]) {
+                if (nums[i] == nums[nums[i]]) {
+                    System.out.println(nums[i]);
+                    return nums[i];
+                }
+                int tmp = nums[i];
+                nums[i] = nums[tmp];
+                nums[tmp] = tmp;
+            }
+        }
+        System.out.println(nums[0]);
+        return nums[0];
+    }
+
+
+    public static void main(String[] args) {
+        int[] nums= new int[]{2, 3, 1, 0, 2, 5, 3};
+        if (nums.length <= 0) {
+            return ;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            while (i != nums[i]) {
+                if (nums[i] == nums[nums[i]]) {
+                    System.out.println(nums[i]);
+                    return ;
+                }
+                int tmp = nums[i];
+                nums[i] = nums[tmp];
+                nums[tmp] = tmp;
+            }
+        }
+        System.out.println(nums[0]);
+        return;
+    }
 }
