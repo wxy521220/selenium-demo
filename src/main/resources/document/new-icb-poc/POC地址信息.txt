@@ -1,0 +1,23 @@
+redis:   172.27.110.237   6380 密码 ecp@123
+
+http://172.27.110.137:7998/eureka/
+注册中心地址修改  密码修改
+
+
+CREATE USER 'LOGADM'@'%' IDENTIFIED BY 'logADM@123';
+
+GRANT SElECT ON *.* TO 'LOGADM'@'%' IDENTIFIED BY "LOGADM@123";
+
+
+ecp.plt.db_type
+ecp.plt.sequence_no=ECP
+ecp.plt.sql_duppk
+
+to_number
+
+
+<dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+   <version>5.1.4</version>
+</dependency>
