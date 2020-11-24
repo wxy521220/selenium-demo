@@ -100,7 +100,7 @@ public class webTest {
 
     }
     @Test
-    void addDepTest() throws IOException, InterruptedException {
+    void addDepTest() throws IOException{
 
         WebDriver driver=new FirefoxDriver();
 
@@ -123,8 +123,11 @@ public class webTest {
         driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
         //driver.findElement(By.linkText("添加"));
         driver.findElement(By.cssSelector(".member_colLeft_top_addBtn")).click();
-        driver.findElement(By.linkText("添加部门"));
+        driver.findElement(By.linkText("添加部门")).click();
         driver.findElement(By.name("name")).sendKeys("销售部");
+        driver.findElement(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/a")).click();
+        driver.findElement(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/div//a")).click();
+        driver.findElement(By.xpath("//*[@class=\"qui_dialog_foot ww_dialog_foot\"]/a[1]")).click();
 
 
 
