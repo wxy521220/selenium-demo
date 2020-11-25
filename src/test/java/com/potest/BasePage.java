@@ -11,6 +11,10 @@ public class BasePage {
         this.driver=driver;
     }
 
+    //错误二：没有增加空的构造器
+    public BasePage() {
+    }
+
     /**
      * 第一次封装，不够简洁
      */
