@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class TestCase {
+public class SearchStep {
     public List<String> data;
     public List<HashMap<String,Object>> steps;
     static WebDriver driver;
