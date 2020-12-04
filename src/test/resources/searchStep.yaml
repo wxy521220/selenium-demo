@@ -1,6 +1,6 @@
 data:
-- banana
-- junit
+  - banana
+  - junit
 
 steps:
   - firefox: {}
@@ -9,4 +9,5 @@ steps:
   - find: {id: search-button}
   - click: {}
   - find: {id: search-term}
-  - send_keys: {data}
+  - send_keys: ${data}
+  - quit: {}
