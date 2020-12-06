@@ -8,6 +8,7 @@ public class SearchStep {
 
     public List<String> data;
     public   List<HashMap<String,Object>> steps;
+    //todo    static
     public  int index=0;
 
 
