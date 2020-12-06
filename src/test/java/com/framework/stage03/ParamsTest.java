@@ -45,7 +45,7 @@ public class ParamsTest {
         //TypeReference typeReference=new TypeReference<List<String>>(){};
 
         SearchStep searchStep = mapper.readValue(
-                ParamsTest.class.getResourceAsStream("/searchStepPO.yaml"),
+                ParamsTest.class.getResourceAsStream("/searchStep03.yaml"),
                 SearchStep.class);
         return searchStep.testcaseGenerate();
 

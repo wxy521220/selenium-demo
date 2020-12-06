@@ -18,13 +18,6 @@ import java.util.List;
 public class ParamsTest {
 
 
-    @Test
-    void search(){
-        MainPage mainPage=new MainPage();
-        mainPage.search().search("selenium");
-    }
-
-
     @ParameterizedTest
     @MethodSource
     void search_04(SearchStep searchStep) {
@@ -45,7 +38,7 @@ public class ParamsTest {
         //TypeReference typeReference=new TypeReference<List<String>>(){};
 
         SearchStep searchStep = mapper.readValue(
-                ParamsTest.class.getResourceAsStream("/searchStepPO.yaml"),
+                ParamsTest.class.getResourceAsStream("/searchStep04.yaml"),
                 SearchStep.class);
         return searchStep.testcaseGenerate();
 

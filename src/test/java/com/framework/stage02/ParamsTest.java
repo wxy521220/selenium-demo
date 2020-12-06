@@ -37,7 +37,7 @@ public class ParamsTest {
         //TypeReference typeReference=new TypeReference<List<String>>(){};
 
         SearchStepSelenium searchStepSelenium = mapper.readValue(
-                ParamsTest.class.getResourceAsStream("/searchStep.yaml"),
+                ParamsTest.class.getResourceAsStream("/searchStep02.yaml"),
                 SearchStepSelenium.class);
         return searchStepSelenium.testcaseGenerate();
 

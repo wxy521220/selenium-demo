@@ -8,7 +8,7 @@ public class SearchStep {
 
     public List<String> data;
     public   List<HashMap<String,Object>> steps;
-    public static int index=0;
+    public  int index=0;
 
 
 
@@ -24,6 +24,7 @@ public class SearchStep {
 
     public  List<SearchStep> testcaseGenerate(){
         List<SearchStep> searchSteps =new ArrayList<>();
+        System.out.println("data.size()-->"+data.size());
         for (int i = 0; i < data.size(); i++) {
             SearchStepPO newStepPO=new SearchStepPO();
             newStepPO.index=i;
@@ -44,8 +45,8 @@ public class SearchStep {
      */
 
     public Object getValue(HashMap<String,Object> step,String key){
+        System.out.println("index"+index);
         Object value = step.get(key);
-        //todo instanceof 用法记忆
         if(value instanceof String){
             value=((String) value).replace("${data}", data.get(index));
         }

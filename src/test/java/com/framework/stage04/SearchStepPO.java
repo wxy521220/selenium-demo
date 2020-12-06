@@ -22,12 +22,13 @@ public class SearchStepPO extends SearchStep {
         System.out.println("111111");
         steps.forEach(step->{
            String key=step.keySet().iterator().next();
-           if(step.keySet().contains("init")){
+           //todo if(step.keySet().contains("init")){
+           if(key.contains("init")){
                //String[] value = (String[]) getValue(step, "init");
                ArrayList<String> value = (ArrayList<String>) getValue(step, "init");
                BasePage.getInstance().poInit(value.get(0),value.get(1));
            }
-           if(step.keySet().contains(".")){
+           if(key.contains(".")){
                String[] objectMethod=key.split("\\.");
                String object=objectMethod[0];
                String method=objectMethod[1];
