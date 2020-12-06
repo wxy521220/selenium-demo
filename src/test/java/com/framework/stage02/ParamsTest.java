@@ -27,7 +27,11 @@ public class ParamsTest {
     }
 
 
-
+    /**
+     * 数据源解析
+     * @return
+     * @throws IOException
+     */
     static List<SearchStep> search_04() throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         //TypeReference typeReference=new TypeReference<List<String>>(){};

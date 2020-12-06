@@ -27,6 +27,10 @@ public class SearchStep {
     //index
     //替换变量值
 
+    /**
+     * case裂变
+     * @return
+     */
 
     public  List<SearchStep> testcaseGenerate(){
         List<SearchStep> searchSteps=new ArrayList<>();
@@ -41,6 +45,13 @@ public class SearchStep {
 
         return searchSteps;
     }
+
+    /**
+     * 替换变量值
+     * @param step
+     * @param key
+     * @return
+     */
 
     private Object getValue(HashMap<String,Object> step,String key){
         Object value = step.get(key);
@@ -61,7 +72,9 @@ public class SearchStep {
         return value;
     }
 
-
+    /**
+     * 操作步骤处理
+     */
 
     public void run(){
         steps.forEach(step->{
@@ -78,7 +91,6 @@ public class SearchStep {
                 driver.get((String) getValue(step,"get"));
         }
             if(step.keySet().contains("find")){
-                //todo 什么知识点？
                 List<By> by=new ArrayList<>();
                 ((HashMap<String,String>)getValue(step,"find")).entrySet().forEach(stringStringEntry -> {
                     if(stringStringEntry.getKey().contains("id")){
@@ -96,7 +108,6 @@ public class SearchStep {
             }
             if(step.keySet().contains("send_keys")){
                 System.out.println((String)getValue(step,"send_keys"));
-                //todo  参数化
                 currebtElement.sendKeys((String)getValue(step,"send_keys"));
                 try {
                     Thread.sleep(3000);

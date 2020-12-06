@@ -1,0 +1,17 @@
+data:
+  - banana
+  - junit
+
+steps:
+  - init: [mainPage,com.framework.stage03.MainPage]
+  - mainPage.search: {}
+#  - searchPage: {}
+#  - searchPage.search: ${data}
+#  - firefox: {}
+#  - implicitlyWait: 5
+#  - get: https://ceshiren.com/
+#  - find: {id: search-button}
+#  - click: {}
+#  - find: {id: search-term}
+#  - send_keys: ${data}
+#  - quit: {}
