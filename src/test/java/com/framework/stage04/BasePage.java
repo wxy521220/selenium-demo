@@ -1,4 +1,4 @@
-package com.framework.stage03;
+package com.framework.stage04;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class BasePage {
 
     static BasePage instance=null;
-    HashMap<String,BasePage> pages=new HashMap<>();
+    HashMap<String, BasePage> pages=new HashMap<>();
     WebDriver driver;
     public BasePage(WebDriver driver) {
         this.driver=driver;
@@ -62,7 +62,7 @@ public class BasePage {
     public void poInit(String name,String className){
         try {
             //创建对象并且实例化
-            BasePage  pageClass = (BasePage)Class.forName(className).newInstance();
+            BasePage pageClass = (BasePage)Class.forName(className).newInstance();
             //将实例化之后的对象放在pages中存储
             pages.put(name,pageClass);
         } catch (Exception e) {

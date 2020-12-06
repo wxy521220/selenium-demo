@@ -19,10 +19,10 @@ public class ParamsTest {
 
     @ParameterizedTest
     @MethodSource
-    void search_04(SearchStep searchStep) {
+    void search_04(SearchStepSelenium searchStepSelenium) {
 
-        searchStep.run();
-        //System.out.println(searchStep);
+        searchStepSelenium.run();
+        //System.out.println(searchStepSelenium);
 
     }
 
@@ -32,14 +32,14 @@ public class ParamsTest {
      * @return
      * @throws IOException
      */
-    static List<SearchStep> search_04() throws IOException {
+    static List<SearchStepSelenium> search_04() throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         //TypeReference typeReference=new TypeReference<List<String>>(){};
 
-        SearchStep searchStep = mapper.readValue(
+        SearchStepSelenium searchStepSelenium = mapper.readValue(
                 ParamsTest.class.getResourceAsStream("/searchStep.yaml"),
-                SearchStep.class);
-        return searchStep.testcaseGenerate();
+                SearchStepSelenium.class);
+        return searchStepSelenium.testcaseGenerate();
 
     }
 

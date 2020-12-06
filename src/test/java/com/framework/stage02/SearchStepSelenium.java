@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 
-public class SearchStep {
+public class SearchStepSelenium {
     public   List<String> data;
     public   List<HashMap<String,Object>> steps;
     static WebDriver driver;
@@ -32,18 +32,18 @@ public class SearchStep {
      * @return
      */
 
-    public  List<SearchStep> testcaseGenerate(){
-        List<SearchStep> searchSteps=new ArrayList<>();
+    public  List<SearchStepSelenium> testcaseGenerate(){
+        List<SearchStepSelenium> searchStepSeleniums =new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
-            SearchStep newStep=new SearchStep();
+            SearchStepSelenium newStep=new SearchStepSelenium();
             newStep.index=i;
             newStep.data=data;
             newStep.steps=steps;
 
-            searchSteps.add(newStep);
+            searchStepSeleniums.add(newStep);
         }
 
-        return searchSteps;
+        return searchStepSeleniums;
     }
 
     /**
