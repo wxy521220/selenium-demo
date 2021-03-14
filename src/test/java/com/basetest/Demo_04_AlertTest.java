@@ -1,6 +1,5 @@
 package com.basetest;
 
-import com.multibrowsertest.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * 弹窗处理
  */
 
-public class Demo_04_AlertTest extends BaseTest {
+public class Demo_04_AlertTest extends Demo_01_BaseTest {
 
     @Test
     void alertTest() throws InterruptedException {

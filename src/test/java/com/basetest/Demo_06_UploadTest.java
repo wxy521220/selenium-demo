@@ -1,6 +1,5 @@
 package com.basetest;
 
-import com.multibrowsertest.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -10,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 文件上传处理
  */
 
-public class Demo_06_UploadTest extends BaseTest {
+public class Demo_06_UploadTest extends Demo_01_BaseTest {
 
     @Test
     void uploadTest() throws InterruptedException {

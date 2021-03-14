@@ -1,11 +1,10 @@
-package com.multibrowsertest;
+package com.basetest;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BrowserTest extends BaseTest {
+public class Demo_07_BrowserTest extends Demo_01_BaseTest {
 
 
     @Test

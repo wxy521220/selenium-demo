@@ -1,4 +1,4 @@
-package com.multibrowsertest;
+package com.basetest;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BaseTest {
+public class Demo_01_BaseTest {
     public static WebDriver driver;
 
     @BeforeAll

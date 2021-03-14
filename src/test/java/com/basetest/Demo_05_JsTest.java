@@ -1,10 +1,9 @@
 package com.basetest;
 
 import org.openqa.selenium.JavascriptExecutor;
-import com.multibrowsertest.BaseTest;
 import org.junit.jupiter.api.Test;
 
-public class Demo_05_JsTest extends BaseTest {
+public class Demo_05_JsTest extends Demo_01_BaseTest {
 
     @Test
     void jsTest() throws InterruptedException {
