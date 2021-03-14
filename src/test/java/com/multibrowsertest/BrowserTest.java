@@ -11,19 +11,19 @@ public class BrowserTest extends BaseTest {
     @Test
     void browserTest(){
         driver.get("https://ceshiren.com/");
-        //driver.findElement(By.xpath("//span[contains(text(),'µÇÂ¼')]")).click();
+        //driver.findElement(By.xpath("//span[contains(text(),'ç™»å½•')]")).click();
         driver.findElement(By.xpath("/html/body/section/div/div[1]/header/div/div/div[2]/span/button[2]/span")).click();
 
-        WebElement login=((FirefoxDriver) driver).findElementById("login-account-name");
-        WebElement passwd=((FirefoxDriver) driver).findElementById("login-account-password");
+        WebElement login=driver.findElement(By.id("login-account-name"));
+        WebElement passwd=driver.findElement(By.id("login-account-password"));
         WebElement search_button=driver.findElement(By.xpath("/html/body/section/div/div[4]/div/div/div/div[3]/div[2]/button[1]/span"));
 
-        //Çå¿ÕÊäÈë¿òÄÚÈİ
+        //æ¸…ç©ºè¾“å…¥æ¡†å†…å®¹
         login.clear();
-        //ÊäÈë¿òÊäÈëÄÚÈİ
+        //è¾“å…¥æ¡†è¾“å…¥å†…å®¹
         login.sendKeys("2460765913@qq.com");
         passwd.sendKeys("521220wasd");
-        //µ¥»÷
+        //å•å‡»
         search_button.click();
     }
 

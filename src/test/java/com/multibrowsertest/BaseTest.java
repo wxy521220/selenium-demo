@@ -14,11 +14,11 @@ public class BaseTest {
         //根据传入的不同参数，获取不同浏览器的driver
         String browserName = System.getProperty("browser");
         if("chrome".equals(browserName)){
-            System.setProperty("","");
+            //System.setProperty("","");
             driver=new ChromeDriver();
 
         }else if("firefox".equals(browserName)){
-            System.setProperty("webdriver.firefox.bin", "D:\\software\\firefox\\Mozilla Firefox\\firefox.exe");
+            //System.setProperty("webdriver.firefox.bin", "D:\\software\\firefox\\Mozilla Firefox\\firefox.exe");
             driver=new FirefoxDriver();
         }
     }

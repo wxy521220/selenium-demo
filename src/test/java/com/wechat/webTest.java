@@ -30,7 +30,7 @@ public class webTest {
         Thread.sleep(15000);
         Set<Cookie> cookies = driver.manage().getCookies();
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
-        //todo Â·¾¶¼Ó/
+        //todo è·¯å¾„åŠ /
         mapper.writeValue(new File("orderOutput.yaml"), cookies);
 
 
@@ -41,7 +41,7 @@ public class webTest {
         WebDriver driver=new FirefoxDriver();
 
         driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
-        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
+        //éšå¼ç­‰å¾…ï¼Œé»˜è®¤æ¯5ç§’è½®è¯¢ä¸€æ¬¡
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
@@ -67,7 +67,7 @@ public class webTest {
 
         driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
         driver.manage().window().maximize();
-        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
+        //éšå¼ç­‰å¾…ï¼Œé»˜è®¤æ¯5ç§’è½®è¯¢ä¸€æ¬¡
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
@@ -83,15 +83,15 @@ public class webTest {
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
         Thread.sleep(1000);
-        driver.findElement(By.id("username")).sendKeys("ÕÅÈı");
+        driver.findElement(By.id("username")).sendKeys("å¼ ä¸‰");
         driver.findElement(By.id("memberAdd_english_name")).sendKeys("wang");
         driver.findElement(By.id("memberAdd_acctid")).sendKeys("13426882203");
         driver.findElement(By.id("memberAdd_phone")).sendKeys("13426882203");
         Thread.sleep(1000);
         driver.findElement(By.id("memberAdd_telephone")).sendKeys("010-81722736");
         driver.findElement(By.id("memberAdd_mail")).sendKeys("2460765915@qq.com");
-        driver.findElement(By.id("memberEdit_address")).sendKeys("±±¾©ÊĞº£µíÇø");
-        driver.findElement(By.id("memberAdd_title")).sendKeys("¿ª·¢");
+        driver.findElement(By.id("memberEdit_address")).sendKeys("åŒ—äº¬å¸‚æµ·æ·€åŒº");
+        driver.findElement(By.id("memberAdd_title")).sendKeys("å¼€å‘");
         Thread.sleep(1000);
         driver.findElement(By.cssSelector(".js_btn_save")).click();
 
@@ -104,7 +104,7 @@ public class webTest {
 
         driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx");
         driver.manage().window().maximize();
-        //ÒşÊ½µÈ´ı£¬Ä¬ÈÏÃ¿5ÃëÂÖÑ¯Ò»´Î
+        //éšå¼ç­‰å¾…ï¼Œé»˜è®¤æ¯5ç§’è½®è¯¢ä¸€æ¬¡
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
@@ -119,10 +119,10 @@ public class webTest {
         driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         driver.findElement(By.cssSelector(".ww_indexImg_AddMember")).click();
-        //driver.findElement(By.linkText("Ìí¼Ó"));
+        //driver.findElement(By.linkText("æ·»åŠ "));
         driver.findElement(By.cssSelector(".member_colLeft_top_addBtn")).click();
-        driver.findElement(By.linkText("Ìí¼Ó²¿ÃÅ")).click();
-        driver.findElement(By.name("name")).sendKeys("ÏúÊÛ²¿");
+        driver.findElement(By.linkText("æ·»åŠ éƒ¨é—¨")).click();
+        driver.findElement(By.name("name")).sendKeys("é”€å”®éƒ¨");
         driver.findElement(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/a")).click();
         driver.findElement(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/div//a")).click();
         driver.findElement(By.xpath("//*[@class=\"qui_dialog_foot ww_dialog_foot\"]/a[1]")).click();
