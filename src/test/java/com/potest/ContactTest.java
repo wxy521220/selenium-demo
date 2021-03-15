@@ -59,15 +59,15 @@ public class ContactTest extends BasePage {
     void addConract() throws InterruptedException {
         click(By.cssSelector(".ww_indexImg_AddMember"));
         Thread.sleep(1000);
-        sendKeys(By.id("username"),"ÕÅÈı");
+        sendKeys(By.id("username"),"å¼ ä¸‰");
         sendKeys(By.id("memberAdd_english_name"),"wang");
         sendKeys(By.id("memberAdd_acctid"),"13426882203");
         sendKeys(By.id("memberAdd_phone"),"13426882203");
         Thread.sleep(1000);
         sendKeys(By.id("memberAdd_telephone"),"010-81722736");
         sendKeys(By.id("memberAdd_mail"),"2460765915@qq.com");
-        sendKeys(By.id("memberEdit_address"),"±±¾©ÊĞº£µíÇø");
-        sendKeys(By.id("memberAdd_title"),"¿ª·¢");
+        sendKeys(By.id("memberEdit_address"),"åŒ—äº¬å¸‚æµ·æ·€åŒº");
+        sendKeys(By.id("memberAdd_title"),"å¼€å‘");
         Thread.sleep(1000);
         click(By.cssSelector(".js_btn_save"));
 
@@ -76,10 +76,10 @@ public class ContactTest extends BasePage {
     @Test
     void addDep(){
         click((By.cssSelector(".ww_indexImg_AddMember")));
-        //findElement(By.linkText("Ìí¼Ó"));
+        //findElement(By.linkText("æ·»åŠ "));
         click(By.cssSelector(".member_colLeft_top_addBtn"));
-        click(By.linkText("Ìí¼Ó²¿ÃÅ"));
-        sendKeys(By.name("name"),"ÏúÊÛ²¿");
+        click(By.linkText("æ·»åŠ éƒ¨é—¨"));
+        sendKeys(By.name("name"),"é”€å”®éƒ¨");
         click(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/a"));
         click(By.xpath("//*[@class=\"member_tag_dialog_inputDlg\"]//div[3]/div//a"));
         click(By.xpath("//*[@class=\"qui_dialog_foot ww_dialog_foot\"]/a[1]"));
@@ -89,8 +89,8 @@ public class ContactTest extends BasePage {
     @Test
     void serchDep(){
         click((By.cssSelector(".ww_indexImg_AddMember")));
-        sendKeys(By.id("memberSearchInput"),"ÏúÊÛ²¿");
-        boolean flg = driver.findElement(By.cssSelector(".member_colLeft_bottom")).getText().contains("ÏúÊÛ²¿");
+        sendKeys(By.id("memberSearchInput"),"é”€å”®éƒ¨");
+        boolean flg = driver.findElement(By.cssSelector(".member_colLeft_bottom")).getText().contains("é”€å”®éƒ¨");
         assertEquals("true",flg);
     }
 

@@ -89,8 +89,8 @@ public class Demo_02_ActionsTest {
             driver.get("http://sahitest.com/demo/label.htm");
             // //table//input[@type="textbox"]
             driver.findElements(By.xpath("//input[@type='textbox']")).get(0).sendKeys("wxy");
-            actions.keyDown(Keys.CONTROL).sendKeys("a").perform();
-            actions.keyDown(Keys.CONTROL).sendKeys("c").perform();
+            actions.keyDown(Keys.CONTROL).sendKeys("a");
+            actions.keyDown(Keys.CONTROL).sendKeys("c");
             actions.keyDown(driver.findElements(By.xpath("//input[@type='textbox']")).get(1),Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
             Thread.sleep(3000);
         } catch (InterruptedException e) {
